@@ -428,3 +428,46 @@ function initializeAnimations() {
         observer.observe(el);
     });
 }
+
+// Footer interaction functions
+function quickAttendance() {
+    document.querySelector('[data-section="attendance"]').click();
+    showMessage('📊 Loading attendance management...', 'info');
+}
+
+function viewSchedule() {
+    document.querySelector('[data-section="schedule"]').click();
+    showMessage('📅 Loading your teaching schedule...', 'info');
+}
+
+function exportData() {
+    showMessage('📥 Exporting teacher data...', 'info');
+    setTimeout(() => {
+        showMessage('✅ Data exported successfully!', 'success');
+    }, 1500);
+}
+
+// Update last sync time
+function updateLastSync() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    const syncElement = document.getElementById('lastSync');
+    if (syncElement) {
+        syncElement.textContent = timeString;
+    }
+}
+
+// Initialize sync time on load
+setTimeout(updateLastSync, 1000);
+
+// Logout and Settings functions
+function logout() {
+    showMessage('👋 Logging out...', 'info');
+    setTimeout(() => {
+        window.location.href = 'welcome.html';
+    }, 1000);
+}
+
+function showSettings() {
+    showMessage('⚙️ Settings coming soon! Till date enjoy the demo', 'info');
+}

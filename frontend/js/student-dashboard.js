@@ -495,7 +495,7 @@ function initializeAnimations() {
     });
     
     // Animate stats cards on load
-    document.querySelectorAll('.stats-card').forEach((card, index) => {
+    document.querySelectorAll('.stats-card, .stats-card-success, .stats-card-warning, .stats-card-info').forEach((card, index) => {
         setTimeout(() => {
             card.classList.add('bounce-in');
         }, index * 200);
@@ -511,4 +511,26 @@ function initializeAnimations() {
             card.style.transform = 'translateY(0)';
         }, index * 150);
     });
+}
+
+// Footer interaction functions
+function quickGrades() {
+    document.querySelector('[data-section="grades"]').click();
+    showMessage('📊 Loading your grades...', 'info');
+}
+
+function contactMentor() {
+    showMessage('📞 Mentor Contact: Dr. Devesh Bandil - +91-9876543210', 'success');
+}
+
+// Logout and Settings functions
+function logout() {
+    showMessage('👋 Logging out...', 'info');
+    setTimeout(() => {
+        window.location.href = 'welcome.html';
+    }, 1000);
+}
+
+function showSettings() {
+    showMessage('⚙️ Settings coming soon! Till date enjoy the demo', 'info');
 }

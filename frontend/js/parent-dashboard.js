@@ -448,3 +448,38 @@ function initializeAnimations() {
         observer.observe(el);
     });
 }
+
+// Footer interaction functions
+function viewProgress() {
+    document.querySelector('[data-section="grades"]').click();
+    showMessage('📊 Loading child\'s academic progress...', 'info');
+}
+
+function contactTeacher() {
+    document.querySelector('[data-section="contacts"]').click();
+    showMessage('📞 Loading teacher contact information...', 'info');
+}
+
+function scheduleCall() {
+    showMessage('📞 Scheduling call with mentor Dr. Devesh Bandil...', 'info');
+    setTimeout(() => {
+        showMessage('✅ Call scheduled for tomorrow 3:00 PM', 'success');
+    }, 1500);
+}
+
+function viewReports() {
+    document.querySelector('[data-section="grades"]').click();
+    showMessage('📈 Loading detailed academic reports...', 'info');
+}
+
+// Logout and Settings functions
+function logout() {
+    showMessage('👋 Logging out...', 'info');
+    setTimeout(() => {
+        window.location.href = 'welcome.html';
+    }, 1000);
+}
+
+function showSettings() {
+    showMessage('⚙️ Settings coming soon! Till date enjoy the demo', 'info');
+}

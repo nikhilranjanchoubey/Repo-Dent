@@ -405,3 +405,18 @@ function initializeAnimations() {
         }, index * 200);
     });
 }
+
+// Redirect modal functions
+function showRedirectModal() {
+    const modal = new bootstrap.Modal(document.getElementById('redirectModal'));
+    modal.show();
+}
+
+function redirectToGitHub() {
+    // Close the modal first
+    const modal = bootstrap.Modal.getInstance(document.getElementById('redirectModal'));
+    modal.hide();
+    
+    // Open GitHub link in new tab
+    window.open('https://github.com/nikhilranjanchoubey/Lernix', '_blank');
+}

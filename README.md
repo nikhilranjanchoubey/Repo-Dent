@@ -2,7 +2,7 @@
 
 A modern, comprehensive Student Management System built with C/C++ backend and cutting-edge web frontend using Bootstrap 5. Features real Arya College of Engineering & IT data with interactive demo capabilities and glass morphism design.
 
-## 🏗️ Project Structure
+## 📁 Project Structure
 
 ```
 SMS/
