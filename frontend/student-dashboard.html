@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - SMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/footer-styles.css" rel="stylesheet">
+    <link href="css/enhanced-schedule.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <div class="text-center mb-4">
+                        <div class="logo-icon mx-auto mb-2">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <h5 class="text-white">Student Portal</h5>
+                        <small class="text-white-50">NIKHIL</small>
+                        <small class="d-block text-white-50">III SEM CS-B</small>
+                    </div>
+                    
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#dashboard" data-section="dashboard">
+                                <i class="bi bi-speedometer2 me-2"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#schedule" data-section="schedule">
+                                <i class="bi bi-calendar3 me-2"></i>Class Schedule
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#subjects" data-section="subjects">
+                                <i class="bi bi-book me-2"></i>Subjects
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#attendance" data-section="attendance">
+                                <i class="bi bi-calendar-check me-2"></i>Attendance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#grades" data-section="grades">
+                                <i class="bi bi-award me-2"></i>Grades & Marks
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacts" data-section="contacts">
+                                <i class="bi bi-telephone me-2"></i>Contacts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#calendar" data-section="calendar">
+                                <i class="bi bi-calendar-event me-2"></i>Academic Calendar
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <hr class="text-white-50">
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" 
+                           data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle me-2"></i>
+                            <span>NIKHIL</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="welcome.html">
+                                <i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+                <!-- Dashboard Section -->
+                <div id="dashboard-section" class="content-section">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2"><i class="bi bi-speedometer2 me-2"></i>Student Dashboard</h1>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="row mb-4">
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card stats-card fade-in">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Enrolled Subjects</div>
+                                            <div class="h5 mb-0 font-weight-bold">6</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="bi bi-book stats-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card stats-card-success fade-in">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Attendance</div>
+                                            <div class="h5 mb-0 font-weight-bold">92.5%</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="bi bi-calendar-check stats-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card stats-card-warning fade-in">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Overall GPA</div>
+                                            <div class="h5 mb-0 font-weight-bold">8.8</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="bi bi-award stats-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card stats-card-info fade-in">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Pending Assignments</div>
+                                            <div class="h5 mb-0 font-weight-bold">3</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="bi bi-list-task stats-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Today's Schedule -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="bi bi-calendar-week me-2"></i>Today's Classes</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="schedule-item p-3 bg-light rounded">
+                                        <h6 class="fw-bold">SpeakUp with Power Persona</h6>
+                                        <p class="mb-1"><i class="bi bi-clock me-1"></i>9:00 AM - 9:50 AM</p>
+                                        <p class="mb-1"><i class="bi bi-geo-alt me-1"></i>LT-19</p>
+                                        <p class="mb-0"><i class="bi bi-person me-1"></i>Personality Development</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="schedule-item p-3 bg-light rounded">
+                                        <h6 class="fw-bold">NextGen TechTrack</h6>
+                                        <p class="mb-1"><i class="bi bi-clock me-1"></i>1:10 PM - 2:00 PM</p>
+                                        <p class="mb-1"><i class="bi bi-geo-alt me-1"></i>CL-22</p>
+                                        <p class="mb-0"><i class="bi bi-person me-1"></i>Placement Preparation</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="schedule-item p-3 bg-light rounded">
+                                        <h6 class="fw-bold">AEM</h6>
+                                        <p class="mb-1"><i class="bi bi-clock me-1"></i>2:00 PM - 2:50 PM</p>
+                                        <p class="mb-1"><i class="bi bi-geo-alt me-1"></i>LT-19</p>
+                                        <p class="mb-0"><i class="bi bi-person me-1"></i>Mrs. Ekta Soni</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Academic Info -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0"><i class="bi bi-person-badge me-2"></i>Academic Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Mentor:</strong> Dr. Devesh Bandil</p>
+                                    <p><strong>Mentor Contact:</strong> +91-9876543210</p>
+                                    <p><strong>Class:</strong> III SEM CS-B</p>
+                                    <p><strong>Department:</strong> Computer Science & Engineering</p>
+                                    <p><strong>College:</strong> Arya College of Engineering & IT</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0"><i class="bi bi-calendar-event me-2"></i>Upcoming Events</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span>Project Submission</span>
+                                        <small class="text-muted">Oct 30</small>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span>Midterm Exams</span>
+                                        <small class="text-muted">Nov 2</small>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Winter Break</span>
+                                        <small class="text-muted">Dec 24-31</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance Section -->
+                <div id="attendance-section" class="content-section d-none">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2"><i class="bi bi-calendar-check me-2"></i>My Attendance</h1>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Subject</th>
+                                            <th>Total Classes</th>
+                                            <th>Present</th>
+                                            <th>Absent</th>
+                                            <th>Percentage</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Software Engineering (SE)</td>
+                                            <td>20</td>
+                                            <td>19</td>
+                                            <td>1</td>
+                                            <td>95.0%</td>
+                                            <td><span class="badge bg-success">Excellent</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>OOPS</td>
+                                            <td>18</td>
+                                            <td>17</td>
+                                            <td>1</td>
+                                            <td>94.4%</td>
+                                            <td><span class="badge bg-success">Excellent</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Data Structures & Algorithms (DSA)</td>
+                                            <td>22</td>
+                                            <td>19</td>
+                                            <td>3</td>
+                                            <td>86.4%</td>
+                                            <td><span class="badge bg-warning">Needs Attention</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Digital Electronics (DE)</td>
+                                            <td>25</td>
+                                            <td>24</td>
+                                            <td>1</td>
+                                            <td>96.0%</td>
+                                            <td><span class="badge bg-success">Excellent</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>MEFA</td>
+                                            <td>12</td>
+                                            <td>11</td>
+                                            <td>1</td>
+                                            <td>91.7%</td>
+                                            <td><span class="badge bg-success">Good</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Applied Engineering Management (AEM)</td>
+                                            <td>15</td>
+                                            <td>14</td>
+                                            <td>1</td>
+                                            <td>93.3%</td>
+                                            <td><span class="badge bg-success">Good</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grades Section -->
+                <div id="grades-section" class="content-section d-none">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2"><i class="bi bi-award me-2"></i>Grades & Marks</h1>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Subject</th>
+                                            <th>Midterm</th>
+                                            <th>Final</th>
+                                            <th>Assignments</th>
+                                            <th>Total</th>
+                                            <th>Grade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Software Engineering (SE)</td>
+                                            <td>85/100</td>
+                                            <td>Pending</td>
+                                            <td>90/100</td>
+                                            <td>87.5%</td>
+                                            <td><span class="badge bg-success">A</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>OOPS</td>
+                                            <td>82/100</td>
+                                            <td>Pending</td>
+                                            <td>88/100</td>
+                                            <td>85.0%</td>
+                                            <td><span class="badge bg-success">A-</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Data Structures & Algorithms (DSA)</td>
+                                            <td>75/100</td>
+                                            <td>Pending</td>
+                                            <td>80/100</td>
+                                            <td>77.5%</td>
+                                            <td><span class="badge bg-info">B</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Digital Electronics (DE)</td>
+                                            <td>88/100</td>
+                                            <td>Pending</td>
+                                            <td>92/100</td>
+                                            <td>90.0%</td>
+                                            <td><span class="badge bg-success">A+</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>MEFA</td>
+                                            <td>78/100</td>
+                                            <td>Pending</td>
+                                            <td>82/100</td>
+                                            <td>80.0%</td>
+                                            <td><span class="badge bg-primary">B+</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Applied Engineering Management (AEM)</td>
+                                            <td>80/100</td>
+                                            <td>Pending</td>
+                                            <td>85/100</td>
+                                            <td>82.5%</td>
+                                            <td><span class="badge bg-primary">B+</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contacts Section -->
+                <div id="contacts-section" class="content-section d-none">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2"><i class="bi bi-telephone me-2"></i>Important Contacts</h1>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0"><i class="bi bi-person-badge me-2"></i>Academic Contacts</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="contact-item mb-3">
+                                        <h6>Mentor - Dr. Devesh Bandil</h6>
+                                        <p class="mb-1"><i class="bi bi-telephone me-1"></i>+91-9876543210</p>
+                                        <p class="mb-0"><i class="bi bi-envelope me-1"></i>devesh.bandil@aryacollege.in</p>
+                                    </div>
+                                    <div class="contact-item">
+                                        <h6>HOD - Prof. Akhil Pandey</h6>
+                                        <p class="mb-1"><i class="bi bi-telephone me-1"></i>+91-9876543300</p>
+                                        <p class="mb-0"><i class="bi bi-envelope me-1"></i>akhil.pandey@aryacollege.in</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0"><i class="bi bi-building me-2"></i>Administrative Contacts</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="contact-item mb-3">
+                                        <h6>Registrar Office</h6>
+                                        <p class="mb-1"><i class="bi bi-telephone me-1"></i>+1-555-0401</p>
+                                        <p class="mb-0"><i class="bi bi-envelope me-1"></i>registrar@sms.edu</p>
+                                    </div>
+                                    <div class="contact-item">
+                                        <h6>Student Services</h6>
+                                        <p class="mb-1"><i class="bi bi-telephone me-1"></i>+1-555-0501</p>
+                                        <p class="mb-0"><i class="bi bi-envelope me-1"></i>services@sms.edu</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schedule Section -->
+                <div id="schedule-section" class="content-section d-none">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2"><i class="bi bi-calendar3 me-2"></i>Class Schedule</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group me-2">
+                                <button type="button" class="btn btn-sm btn-outline-secondary active" onclick="showWeekView()">Week View</button>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        Day View
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#" onclick="showDaySchedule('Monday')">Monday</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="showDaySchedule('Tuesday')">Tuesday</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="showDaySchedule('Wednesday')">Wednesday</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="showDaySchedule('Thursday')">Thursday</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="showDaySchedule('Friday')">Friday</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="showDaySchedule('Saturday')">Saturday</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced Timetable Header -->
+                    <div class="schedule-header mb-4">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3 class="text-primary mb-1">III SEM CS-B Timetable</h3>
+                                <p class="text-muted mb-0">Arya College of Engineering & IT | Mentor: Dr. Devesh Bandil</p>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <span class="badge bg-success fs-6">W.E.F. 18-08-2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="row mb-4">
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="card text-center bg-primary text-white">
+                                <div class="card-body py-3">
+                                    <i class="bi bi-clock-history fs-2 mb-2"></i>
+                                    <h5 class="mb-0">32</h5>
+                                    <small>Hours/Week</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="card text-center bg-success text-white">
+                                <div class="card-body py-3">
+                                    <i class="bi bi-book fs-2 mb-2"></i>
+                                    <h5 class="mb-0">6</h5>
+                                    <small>Subjects</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="card text-center bg-warning text-white">
+                                <div class="card-body py-3">
+                                    <i class="bi bi-laptop fs-2 mb-2"></i>
+                                    <h5 class="mb-0">4</h5>
+                                    <small>Lab Sessions</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="card text-center bg-info text-white">
+                                <div class="card-body py-3">
+                                    <i class="bi bi-people fs-2 mb-2"></i>
+                                    <h5 class="mb-0">6</h5>
+                                    <small>Faculty</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Timetable -->
+                    <div class="card mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0"><i class="bi bi-calendar-week me-2"></i>Weekly Schedule</h5>
+                            <div class="schedule-legend">
+                                <span class="badge bg-primary me-1">Theory</span>
+                                <span class="badge bg-success me-1">Lab</span>
+                                <span class="badge bg-warning me-1">Special</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-bordered schedule-table mb-0">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th class="sticky-col">Day</th>
+                                            <th class="text-center">I<br><small>9:00-9:50</small></th>
+                                            <th class="text-center">II<br><small>9:50-10:40</small></th>
+                                            <th class="text-center">III<br><small>10:40-11:30</small></th>
+                                            <th class="text-center">IV<br><small>11:30-12:20</small></th>
+                                            <th class="text-center break-col">Break<br><small>12:20-1:10</small></th>
+                                            <th class="text-center">V<br><small>1:10-2:00</small></th>
+                                            <th class="text-center">VI<br><small>2:00-2:50</small></th>
+                                            <th class="text-center">VII<br><small>2:50-3:40</small></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="sticky-col fw-bold">Monday</td>
+                                            <td colspan="4" class="schedule-cell special-class">
+                                                <div class="class-info">
+                                                    <strong>SpeakUp with Power Persona</strong>
+                                                    <small class="d-block text-muted">LT-19 | Build the Best Version of You</small>
+                                                </div>
+                                            </td>
+                                            <td class="break-cell bg-gradient">🍽️</td>
+                                            <td colspan="2" class="schedule-cell special-class">
+                                                <div class="class-info">
+                                                    <strong>NextGen TechTrack</strong>
+                                                    <small class="d-block text-muted">CL-22 | Focused Competitive Edge</small>
+                                                </div>
+                                            </td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>AEM</strong>
+                                                    <small class="d-block text-muted">LT-19 | Mrs. Ekta Soni</small>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sticky-col fw-bold">Tuesday</td>
+                                            <td colspan="2" class="schedule-cell lab-class">
+                                                <div class="class-info">
+                                                    <strong>DE LAB</strong>
+                                                    <small class="d-block text-muted">DE LAB | Er. Chhavi Gupta</small>
+                                                </div>
+                                            </td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>DE</strong>
+                                                    <small class="d-block text-muted">LT-18 | Er. Chhavi Gupta</small>
+                                                </div>
+                                            </td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>MEFA</strong>
+                                                    <small class="d-block text-muted">LT-18 | Mr. Harshit Agarwal</small>
+                                                </div>
+                                            </td>
+                                            <td class="break-cell bg-gradient">🍽️</td>
+                                            <td colspan="2" class="schedule-cell special-class">
+                                                <div class="class-info">
+                                                    <strong>NextGen TechTrack</strong>
+                                                    <small class="d-block text-muted">CL-22 | Focused Competitive Edge</small>
+                                                </div>
+                                            </td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>DSA</strong>
+                                                    <small class="d-block text-muted">LT-18 | Dr. Rajeev Kumar</small>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sticky-col fw-bold">Wednesday</td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>DE</strong>
+                                                    <small class="d-block text-muted">LT-19 | Er. Chhavi Gupta</small>
+                                                </div>
+                                            </td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>SE</strong>
+                                                    <small class="d-block text-muted">LT-19 | Dr. Vishal Shrivastava</small>
+                                                </div>
+                                            </td>
+                                            <td colspan="2" class="schedule-cell lab-class">
+                                                <div class="class-info">
+                                                    <strong>DSA LAB</strong>
+                                                    <small class="d-block text-muted">CL-05 | Dr. Rajeev Kumar</small>
+                                                </div>
+                                            </td>
+                                            <td class="break-cell bg-gradient">🍽️</td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>DSA</strong>
+                                                    <small class="d-block text-muted">LT-19 | Dr. Rajeev Kumar</small>
+                                                </div>
+                                            </td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>AEM</strong>
+                                                    <small class="d-block text-muted">LT-19 | Mrs. Ekta Soni</small>
+                                                </div>
+                                            </td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>OOPS</strong>
+                                                    <small class="d-block text-muted">LT-19 | Dr. Devesh Bandil</small>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sticky-col fw-bold">Thursday</td>
+                                            <td colspan="2" class="schedule-cell special-class">
+                                                <div class="class-info">
+                                                    <strong>NextGen TechTrack</strong>
+                                                    <small class="d-block text-muted">CL-22 | Focused Competitive Edge</small>
+                                                </div>
+                                            </td>
+                                            <td colspan="2" class="schedule-cell lab-class">
+                                                <div class="class-info">
+                                                    <strong>DSA LAB</strong>
+                                                    <small class="d-block text-muted">CL-05 | Dr. Rajeev Kumar</small>
+                                                </div>
+                                            </td>
+                                            <td class="break-cell bg-gradient">🍽️</td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>SE</strong>
+                                                    <small class="d-block text-muted">LT-18 | Dr. Vishal Shrivastava</small>
+                                                </div>
+                                            </td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>MEFA</strong>
+                                                    <small class="d-block text-muted">LT-18 | Mr. Harshit Agarwal</small>
+                                                </div>
+                                            </td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>DE</strong>
+                                                    <small class="d-block text-muted">LT-18 | Er. Chhavi Gupta</small>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sticky-col fw-bold">Friday</td>
+                                            <td colspan="2" class="schedule-cell special-class">
+                                                <div class="class-info">
+                                                    <strong>NextGen TechTrack</strong>
+                                                    <small class="d-block text-muted">CL-22 | Focused Competitive Edge</small>
+                                                </div>
+                                            </td>
+                                            <td colspan="2" class="schedule-cell lab-class">
+                                                <div class="class-info">
+                                                    <strong>SE LAB</strong>
+                                                    <small class="d-block text-muted">CL-01 | Dr. Vishal Shrivastava</small>
+                                                </div>
+                                            </td>
+                                            <td class="break-cell bg-gradient">🍽️</td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>OOPS</strong>
+                                                    <small class="d-block text-muted">LT-19 | Dr. Devesh Bandil</small>
+                                                </div>
+                                            </td>
+                                            <td colspan="2" class="schedule-cell lab-class">
+                                                <div class="class-info">
+                                                    <strong>OOPS LAB</strong>
+                                                    <small class="d-block text-muted">CL-06 | Dr. Devesh Bandil</small>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sticky-col fw-bold">Saturday</td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>SE</strong>
+                                                    <small class="d-block text-muted">LT-18 | Dr. Vishal Shrivastava</small>
+                                                </div>
+                                            </td>
+                                            <td class="schedule-cell theory-class">
+                                                <div class="class-info">
+                                                    <strong>AEM</strong>
+                                                    <small class="d-block text-muted">LT-18 | Mrs. Ekta Soni</small>
+                                                </div>
+                                            </td>
+                                            <td colspan="2" class="schedule-cell lab-class">
+                                                <div class="class-info">
+                                                    <strong>OOPS LAB</strong>
+                                                    <small class="d-block text-muted">CL-06 | Dr. Devesh Bandil</small>
+                                                </div>
+                                            </td>
+                                            <td class="break-cell bg-gradient">🍽️</td>
+                                            <td colspan="3" class="schedule-cell special-class">
+                                                <div class="class-info">
+                                                    <strong>Club Activity</strong>
+                                                    <small class="d-block text-muted">Various Venues</small>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Faculty & Room Info -->
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0"><i class="bi bi-person-badge me-2"></i>Faculty Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <div class="faculty-card p-2 border rounded">
+                                                <strong>Dr. Vishal Shrivastava</strong>
+                                                <small class="d-block text-muted">SE</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="faculty-card p-2 border rounded">
+                                                <strong>Dr. Devesh Bandil</strong>
+                                                <small class="d-block text-muted">OOPS (Mentor)</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="faculty-card p-2 border rounded">
+                                                <strong>Dr. Rajeev Kumar</strong>
+                                                <small class="d-block text-muted">DSA</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="faculty-card p-2 border rounded">
+                                                <strong>Er. Chhavi Gupta</strong>
+                                                <small class="d-block text-muted">DE</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="faculty-card p-2 border rounded">
+                                                <strong>Mrs. Ekta Soni</strong>
+                                                <small class="d-block text-muted">AEM</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="faculty-card p-2 border rounded">
+                                                <strong>Mr. Harshit Agarwal</strong>
+                                                <small class="d-block text-muted">MEFA</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0"><i class="bi bi-geo-alt me-2"></i>Room Locations</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="room-legend">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span><i class="bi bi-building me-1"></i>LT-18, LT-19</span>
+                                            <small class="text-muted">Lecture Theatres</small>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span><i class="bi bi-laptop me-1"></i>CL-01, CL-05, CL-06, CL-22</span>
+                                            <small class="text-muted">Computer Labs</small>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span><i class="bi bi-cpu me-1"></i>DE LAB</span>
+                                            <small class="text-muted">Digital Electronics Lab</small>
+                                        </div>
+                                        <hr>
+                                        <div class="text-center">
+                                            <small class="text-muted">📍 All rooms are in the main academic block</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subjects Section -->
+                <div id="subjects-section" class="content-section d-none">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2"><i class="bi bi-book me-2"></i>My Subjects</h1>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card subject-card">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0"><i class="bi bi-laptop me-2"></i>Software Engineering (SE)</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Teacher:</strong> Dr. Vishal Shrivastava</p>
+                                    <p><strong>Lab Teacher:</strong> Dr. Vishal Shrivastava</p>
+                                    <p><strong>Room:</strong> LT-18, CL-01</p>
+                                    <p><strong>Schedule:</strong> Tue, Wed, Thu, Sat</p>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="badge bg-success">Current Grade: A</span>
+                                        <span class="badge bg-info">Attendance: 95%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card subject-card">
+                                <div class="card-header bg-success text-white">
+                                    <h5 class="mb-0"><i class="bi bi-code-square me-2"></i>Object Oriented Programming (OOPS)</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Teacher:</strong> Dr. Devesh Bandil (Mentor)</p>
+                                    <p><strong>Lab Teacher:</strong> Dr. Devesh Bandil</p>
+                                    <p><strong>Room:</strong> LT-19, CL-06</p>
+                                    <p><strong>Schedule:</strong> Wed, Fri, Sat</p>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="badge bg-primary">Current Grade: A-</span>
+                                        <span class="badge bg-info">Attendance: 92%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card subject-card">
+                                <div class="card-header bg-warning text-white">
+                                    <h5 class="mb-0"><i class="bi bi-diagram-3 me-2"></i>Data Structures & Algorithms (DSA)</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Teacher:</strong> Dr. Rajeev Kumar</p>
+                                    <p><strong>Lab Teacher:</strong> Dr. Rajeev Kumar / Er. Rajni Chouhan</p>
+                                    <p><strong>Room:</strong> LT-18, CL-05</p>
+                                    <p><strong>Schedule:</strong> Tue, Wed, Thu</p>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="badge bg-info">Current Grade: B+</span>
+                                        <span class="badge bg-warning">Attendance: 89%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card subject-card">
+                                <div class="card-header bg-info text-white">
+                                    <h5 class="mb-0"><i class="bi bi-cpu me-2"></i>Digital Electronics (DE)</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Teacher:</strong> Er. Chhavi Gupta</p>
+                                    <p><strong>Lab Teacher:</strong> Er. Chhavi Gupta</p>
+                                    <p><strong>Room:</strong> LT-18, DE LAB</p>
+                                    <p><strong>Schedule:</strong> Tue, Wed, Thu, Fri</p>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="badge bg-success">Current Grade: A</span>
+                                        <span class="badge bg-success">Attendance: 94%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card subject-card">
+                                <div class="card-header bg-danger text-white">
+                                    <h5 class="mb-0"><i class="bi bi-calculator me-2"></i>Mathematics for Engineers & Applications (MEFA)</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Teacher:</strong> Mr. Harshit Agarwal</p>
+                                    <p><strong>Room:</strong> LT-18</p>
+                                    <p><strong>Schedule:</strong> Tue, Thu</p>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="badge bg-primary">Current Grade: B+</span>
+                                        <span class="badge bg-info">Attendance: 91%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card subject-card">
+                                <div class="card-header bg-secondary text-white">
+                                    <h5 class="mb-0"><i class="bi bi-briefcase me-2"></i>Applied Engineering Management (AEM)</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Teacher:</strong> Mrs. Ekta Soni</p>
+                                    <p><strong>Room:</strong> LT-19, LT-18</p>
+                                    <p><strong>Schedule:</strong> Mon, Wed, Sat</p>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="badge bg-success">Current Grade: A</span>
+                                        <span class="badge bg-info">Attendance: 93%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Calendar Section -->
+                <div id="calendar-section" class="content-section d-none">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2"><i class="bi bi-calendar-event me-2"></i>Academic Calendar 2025-26</h1>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <h5 class="mb-0">ARYA COLLEGE OF ENGINEERING & INFORMATION TECHNOLOGY</h5>
+                            <small class="text-muted">Department of CSE/IT/AI&DS - Academic Calendar (2025–26, Odd Semester – UG)</small>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header bg-primary text-white">
+                                    <h6 class="mb-0">JULY 2025</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="calendar-item mb-2">
+                                        <strong>3/7/2025</strong> - Commencement of classes III SEM
+                                    </div>
+                                    <div class="calendar-item">
+                                        <strong>7/7/2025</strong> - Orientation Program III SEM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header bg-success text-white">
+                                    <h6 class="mb-0">AUGUST 2025</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="calendar-item mb-2">
+                                        <strong>15/8/2025</strong> - Independence Day Celebration
+                                    </div>
+                                    <div class="calendar-item mb-2">
+                                        <strong>18/8/2025</strong> - Lab Internal Assessment III SEM
+                                    </div>
+                                    <div class="calendar-item">
+                                        <strong>28/8/2025</strong> - First Midterm III SEM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header bg-secondary text-white">
+                                    <h6 class="mb-0">SEPTEMBER 2025</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="calendar-item mb-2">
+                                        <strong>5/9/2025</strong> - Barawafat Holiday
+                                    </div>
+                                    <div class="calendar-item mb-2">
+                                        <strong>12/9/2025</strong> - Commencement of First Midterm of III SEM
+                                    </div>
+                                    <div class="calendar-item mb-2">
+                                        <strong>18/9/2025</strong> - Navratri Sthapana Holiday
+                                    </div>
+                                    <div class="calendar-item mb-2">
+                                        <strong>23/9/2025</strong> - Commencement of Lab Internal Assessment III SEM
+                                    </div>
+                                    <div class="calendar-item">
+                                        <strong>30/9/2025</strong> - Durga Ashtami Holiday
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header bg-warning text-white">
+                                    <h6 class="mb-0">OCTOBER 2025</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="calendar-item mb-2">
+                                        <strong>2/10/2025</strong> - Gandhi Jayanti / Dussehra Holiday
+                                    </div>
+                                    <div class="calendar-item mb-2">
+                                        <strong>20-23/10/2025</strong> - Deepawali Holidays
+                                    </div>
+                                    <div class="calendar-item">
+                                        <strong>24/10/2025</strong> - Last Working Day III SEM (As per RTU)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header bg-info text-white">
+                                    <h6 class="mb-0">NOVEMBER 2025</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="calendar-item mb-2">
+                                        <strong>3/11/2025</strong> - Second Midterm III SEM
+                                    </div>
+                                    <div class="calendar-item">
+                                        <strong>7/11/2025</strong> - RTU
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header bg-danger text-white">
+                                    <h6 class="mb-0">DECEMBER 2025</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="calendar-item mb-2">
+                                        <strong>2/12/2025</strong> - Commencement of RTU Theory Exam III SEM
+                                    </div>
+                                    <div class="calendar-item mb-2">
+                                        <strong>25/12/2025</strong> - Christmas Holiday
+                                    </div>
+                                    <div class="calendar-item">
+                                        <strong>27/12/2025</strong> - Guru Nanak Jayanti Holiday
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0">Important Notes</h6>
+                        </div>
+                        <div class="card-body">
+                            <ul class="mb-0">
+                                <li>Seminar/Guest Lecture/Industrial Visit/Training Program activities as per timetable</li>
+                                <li>Remedial Classes to be conducted as per requirement</li>
+                                <li>Academic review Date: Twice in a semester</li>
+                                <li>Minor variations permissible as per program requirement</li>
+                            </ul>
+                            <hr>
+                            <small class="text-muted">Signed by: Dr. Akhil Pandey (HOD) | Dated: 27/6/2025</small>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Interactive Footer -->
+    <footer class="modern-footer mt-auto">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <h6><i class="bi bi-trophy me-2"></i>Academic Progress</h6>
+                    <div class="progress progress-thin">
+                        <div class="progress-bar bg-success progress-85"></div>
+                    </div>
+                    <small class="text-muted">85% semester completion</small>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="d-flex justify-content-center gap-3">
+                        <button type="button" class="btn btn-sm btn-outline-light" onclick="quickGrades()">🎆 View Grades</button>
+                        <button type="button" class="btn btn-sm btn-outline-light" onclick="contactMentor()">📞 Contact Mentor</button>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+                    <small class="text-success">🟢 Attendance: 92.5%</small><br>
+                    <small class="text-muted">&copy; 2024 EduManage Pro Student Portal</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/footer-interactions.js"></script>
+    <script src="js/student-dashboard.js"></script>
+</body>
+</html>

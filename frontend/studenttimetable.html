@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>III SEM CS-B – Timetable (Arya College)</title>
+  <style>
+    :root{
+      --bg:#0f172a;        /* slate-900 */
+      --panel:#111827;     /* gray-900 */
+      --muted:#1f2937;     /* gray-800 */
+      --accent:#22d3ee;    /* cyan-400 */
+      --accent-2:#a78bfa;  /* violet-400 */
+      --text:#e5e7eb;      /* gray-200 */
+      --sub:#94a3b8;       /* slate-400 */
+      --ok:#34d399;        /* emerald-400 */
+      --warn:#fbbf24;      /* amber-400 */
+      --danger:#fb7185;    /* rose-400 */
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#0b1220);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    .container{max-width:1200px;margin-inline:auto;padding:28px}
+
+    header{display:grid;gap:4px;margin-bottom:18px}
+    .title{font-weight:800;font-size:clamp(20px,4vw,32px);letter-spacing:.2px}
+    .subtitle{color:var(--sub)}
+    .badge{display:inline-block;padding:.25rem .6rem;border-radius:999px;background:color-mix(in oklab,var(--accent) 20%, transparent);border:1px solid var(--accent);color:white;font-size:.8rem}
+
+    .card{background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 85%, black), var(--panel));border:1px solid #1f2937;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.25);padding:18px;margin:16px 0}
+
+    h2{margin:0 0 12px;font-size:1.15rem;color:white}
+
+    .grid{display:grid;gap:16px}
+    @media (min-width:900px){.grid{grid-template-columns:1.1fr 2fr}}
+
+    .table-wrap{overflow:auto;border-radius:14px;border:1px solid #22304a}
+    table{width:100%;border-collapse:collapse;min-width:760px;background:#0c1527}
+    th, td{padding:10px 12px;border-bottom:1px solid #1f2a44;vertical-align:top}
+    thead th{position:sticky;top:0;background:#0b1630;font-weight:700;color:#dbeafe;border-bottom:1px solid #243b69}
+    tbody tr:hover td{background:rgba(148,163,184,.05)}
+    th:first-child, td:first-child{position:sticky;left:0;background:#0b1630;color:#dbeafe;border-right:1px solid #1f2a44;z-index:1}
+    .center{text-align:center}
+    .small{font-size:.9rem;color:var(--sub)}
+
+    .pill{display:inline-block;padding:.25rem .5rem;border-radius:999px;border:1px solid #2b3f6b}
+    .room{color:#93c5fd;font-weight:600;background:rgba(147,197,253,.15);padding:.15rem .4rem;border-radius:4px}
+    .note{color:#a7f3d0}
+    .faculty{color:#fbbf24;font-weight:500;font-style:italic}
+
+    footer{color:var(--sub);margin-top:18px;font-size:.9rem}
+    .legend{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+    .legend span{border:1px dashed #2b3f6b;padding:.2rem .5rem;border-radius:999px;color:#c7d2fe}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title">ARYA COLLEGE OF ENGINEERING &amp; INFORMATION TECHNOLOGY</div>
+      <div class="subtitle">DEPARTMENT OF COMPUTER SCIENCE &amp; ENGINEERING</div>
+      <div class="subtitle">TIME‑TABLE <strong>III SEM CS‑B</strong> · Mentor: <strong>Dr. Devesh Bandil</strong> · <span class="badge">W.E.F. 18‑08‑2025</span></div>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Period Timings</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Period</th>
+                <th class="center">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>I</td><td class="center">09:00 – 09:50</td></tr>
+              <tr><td>II</td><td class="center">09:50 – 10:40</td></tr>
+              <tr><td>III</td><td class="center">10:40 – 11:30</td></tr>
+              <tr><td>IV</td><td class="center">11:30 – 12:20</td></tr>
+              <tr><td>Break</td><td class="center">12:20 – 01:10</td></tr>
+              <tr><td>V</td><td class="center">01:10 – 02:00</td></tr>
+              <tr><td>VI</td><td class="center">02:00 – 02:50</td></tr>
+              <tr><td>VII</td><td class="center">02:50 – 03:40</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Notes</h2>
+        <ul>
+          <li>For B.Tech. (Honors) Degree – <em>20 Credit Score</em> from NPTEL is mandatory.</li>
+          <li><strong>PBL</strong> stands for <em>Project Based Learning</em>.</li>
+        </ul>
+        <div class="legend">
+          <span>LT‑xx = Lecture Theatre</span>
+          <span>CL‑xx = Computer Lab</span>
+          <span>DE LAB = Digital Electronics Lab</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Weekly Timetable</h2>
+      <div class="table-wrap">
+        <table aria-label="Weekly timetable">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>I</th>
+              <th>II</th>
+              <th>III</th>
+              <th>IV</th>
+              <th>V</th>
+              <th>VI</th>
+              <th>VII</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td colspan="2">SpeakUp with Power Persona <span class="room">(LT‑19)</span><div class="small">Build the Best Version of You</div></td>
+              <td></td>
+              <td></td>
+              <td>NextGen TechTrack <span class="room">(CL‑22)</span><div class="small">Focused Competitive Edge for Placement</div></td>
+              <td>AEM <span class="room">(LT‑19)</span><div class="faculty">Mr. Harshit Agarwal</div></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>SE LAB (B1) <span class="room">(CL‑01)</span><div class="faculty">Dr. Vishal Shrivastava</div></td>
+              <td>DE LAB (B2) <span class="room">(DE LAB)</span><div class="faculty">Er. Chhavi Gupta</div></td>
+              <td>DE <span class="room">(LT‑18)</span><div class="faculty">Er. Chhavi Gupta</div></td>
+              <td>MEFA <span class="room">(LT‑18)</span><div class="faculty">Mr. Harshit Agarwal</div></td>
+              <td>NextGen TechTrack <span class="room">(CL‑22)</span></td>
+              <td>DSA <span class="room">(LT‑18)</span><div class="faculty">Dr. Rajeev Kumar</div></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>DE / SE <span class="room">(LT‑19)</span><div class="faculty">Er. Chhavi Gupta / Dr. Vishal Shrivastava</div></td>
+              <td>DE / SE <span class="room">(LT‑19)</span><div class="faculty">Er. Chhavi Gupta / Dr. Vishal Shrivastava</div></td>
+              <td>DSA LAB <span class="room">(CL‑05)</span><div class="faculty">Dr. Rajeev Kumar</div></td>
+              <td></td>
+              <td>DSA <span class="room">(LT‑19)</span><div class="faculty">Dr. Rajeev Kumar</div></td>
+              <td>AEM <span class="room">(LT‑19)</span><div class="faculty">Mr. Harshit Agarwal</div></td>
+              <td>OOPS <span class="room">(LT‑19)</span><div class="faculty">Dr. Devesh Bandil</div></td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>NextGen TechTrack <span class="room">(CL‑22)</span></td>
+              <td>DSA LAB <span class="room">(CL‑05)</span><div class="faculty">Dr. Rajeev Kumar</div></td>
+              <td>SE <span class="room">(LT‑18)</span><div class="faculty">Dr. Vishal Shrivastava</div></td>
+              <td>MEFA <span class="room">(LT‑18)</span><div class="faculty">Mr. Harshit Agarwal</div></td>
+              <td>DE <span class="room">(LT‑18)</span><div class="faculty">Er. Chhavi Gupta</div></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>NextGen TechTrack <span class="room">(CL‑22)</span></td>
+              <td>DE LAB (B1) <span class="room">(DE LAB)</span> / SE LAB (B2) <span class="room">(CL‑01)</span><div class="faculty">Er. Chhavi Gupta / Dr. Vishal Shrivastava</div></td>
+              <td>OOPS <span class="room">(LT‑19)</span><div class="faculty">Dr. Devesh Bandil</div></td>
+              <td></td>
+              <td></td>
+              <td colspan="2">OOPS LAB <span class="room">(CL‑06)</span><div class="faculty">Dr. Devesh Bandil</div></td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>SE <span class="room">(LT‑18)</span><div class="faculty">Dr. Vishal Shrivastava</div></td>
+              <td>AEM <span class="room">(LT‑18)</span><div class="faculty">Mr. Harshit Agarwal</div></td>
+              <td>OOPS LAB <span class="room">(CL‑06)</span><div class="faculty">Dr. Devesh Bandil</div></td>
+              <td></td>
+              <td colspan="3">Club Activity</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Faculty &amp; Subjects</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Faculty</th><th>Subject</th></tr></thead>
+            <tbody>
+              <tr><td>Dr. Vishal Shrivastava</td><td>SE</td></tr>
+              <tr><td>Dr. Devesh Bandil</td><td>OOPS</td></tr>
+              <tr><td>Dr. Rajeev Kumar</td><td>DSA</td></tr>
+              <tr><td>Er. Chhavi Gupta</td><td>DE</td></tr>
+              <tr><td>Mrs. Ekta Soni</td><td>SE</td></tr>
+              <tr><td>Mr. Harshit Agarwal</td><td>MEFA</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Lab Allocation</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Lab</th><th>Faculty</th></tr></thead>
+            <tbody>
+              <tr><td>DSA LAB</td><td>Dr. Rajeev Kumar / Er. Rajni Chouhan</td></tr>
+              <tr><td>OOPS LAB</td><td>Dr. Devesh Bandil</td></tr>
+              <tr><td>SE LAB</td><td>Dr. Vishal Shrivastava</td></tr>
+              <tr><td>DE LAB</td><td>Er. Chhavi Gupta</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Arya College of Engineering &amp; IT · III SEM CS‑B Timetable
+    </footer>
+  </div>
+</body>
+</html>

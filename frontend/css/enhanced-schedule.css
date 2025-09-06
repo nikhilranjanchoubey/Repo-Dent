@@ -1,0 +1,198 @@
+/* Enhanced Schedule Styles */
+.enhanced-schedule-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.enhanced-schedule-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 900px;
+    font-family: 'Inter', sans-serif;
+}
+
+.enhanced-schedule-table thead {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+}
+
+.day-header, .period-header, .break-header {
+    padding: 16px 12px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-bottom: 3px solid #0f172a;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.day-header {
+    background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+    position: sticky;
+    left: 0;
+    z-index: 11;
+    min-width: 100px;
+}
+
+.break-header {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.time-slot {
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.day-cell {
+    background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 12px;
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    border-right: 2px solid #1e293b;
+}
+
+.class-cell {
+    padding: 12px 8px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+}
+
+.class-cell:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    z-index: 3;
+}
+
+.theory-session {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    color: white;
+}
+
+.lab-session {
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+    color: white;
+}
+
+.special-session {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+.empty-slot {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    color: #64748b;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.break-slot {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.subject-name {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.room-info {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    margin-bottom: 2px;
+    font-weight: 500;
+}
+
+.faculty-info {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    font-style: italic;
+    line-height: 1.1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .enhanced-schedule-table {
+        min-width: 800px;
+    }
+    
+    .day-header, .period-header, .break-header {
+        padding: 12px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .class-cell {
+        padding: 10px 6px;
+    }
+    
+    .subject-name {
+        font-size: 0.8rem;
+    }
+    
+    .room-info {
+        font-size: 0.7rem;
+    }
+    
+    .faculty-info {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .enhanced-schedule-table {
+        min-width: 700px;
+    }
+    
+    .day-header, .period-header, .break-header {
+        padding: 10px 6px;
+        font-size: 0.75rem;
+    }
+    
+    .class-cell {
+        padding: 8px 4px;
+    }
+    
+    .subject-name {
+        font-size: 0.75rem;
+    }
+    
+    .room-info {
+        font-size: 0.65rem;
+    }
+    
+    .faculty-info {
+        font-size: 0.6rem;
+    }
+}
+
+/* Hover Effects */
+.theory-session:hover {
+    background: linear-gradient(135deg, #5BA0F2 0%, #4A90E2 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+}
+
+.lab-session:hover {
+    background: linear-gradient(135deg, #059669 0%, #065f46 100%) !important;
+}
+
+.special-session:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+}
