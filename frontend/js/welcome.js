@@ -418,5 +418,5 @@ function redirectToGitHub() {
     modal.hide();
     
     // Open GitHub link in new tab
-    window.open('https://github.com/nikhilranjanchoubey/Lernix', '_blank');
+    window.open('https://github.com/nikhilranjanchoubey/Repo-Dent', '_blank');
 }
