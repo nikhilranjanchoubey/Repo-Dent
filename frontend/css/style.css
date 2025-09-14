@@ -366,6 +366,7 @@ body::before {
 .modern-header {
     background: rgba(255, 255, 255, 0.95);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: var(--shadow-md);
     position: sticky;
@@ -1630,4 +1631,114 @@ body::before {
     font-size: 12px;
     padding: 8px;
   }
+}
+
+/* Additional styles for welcome.html */
+.hero-section {
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+}
+
+.demo-credentials {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.demo-credentials h4 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.demo-credentials .credential-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.demo-credentials .credential-item:last-child {
+    margin-bottom: 0;
+}
+
+.demo-credentials .role-badge {
+    display: inline-block;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.demo-credentials .credential-text {
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.benefits-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0;
+}
+
+.benefits-section .benefit-item {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.benefits-section .benefit-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.benefits-section .benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.benefits-section .benefit-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.benefits-section .benefit-description {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.github-icon {
+    font-size: 3rem;
+    color: #333;
+}
+
+.demo-card {
+    cursor: pointer;
+}
+
+.feature-icon-small {
+    width: 60px;
+    height: 60px;
+}
+
+.gradient-section {
+    background: var(--gradient-primary);
 }
