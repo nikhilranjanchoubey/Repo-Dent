@@ -441,3 +441,48 @@ function redirectToGitHub() {
     // Open GitHub link in new tab
     window.open('https://github.com/nikhilranjanchoubey/Repo-Dent', '_blank');
 }
+
+function showCategories() {
+    const existingModal = document.getElementById('categoriesModal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    const modalOverlay = document.createElement('div');
+    modalOverlay.id = 'categoriesModal';
+    modalOverlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px';
+    
+    const categoriesCard = document.createElement('div');
+    categoriesCard.className = 'card bg-white border-primary';
+    categoriesCard.style.maxWidth = '400px';
+    categoriesCard.innerHTML = `
+        <div class="card-header bg-primary text-white text-center">
+            <h6 class="mb-0"><i class="bi bi-grid-3x3-gap-fill me-2"></i>Categories</h6>
+        </div>
+        <div class="card-body">
+            <div class="list-group list-group-flush">
+                <a href="category.html" class="list-group-item list-group-item-action">
+                    <i class="bi bi-building me-2"></i>School
+                </a>
+                <a href="category.html" class="list-group-item list-group-item-action">
+                    <i class="bi bi-mortarboard me-2"></i>College
+                </a>
+                <a href="category.html" class="list-group-item list-group-item-action">
+                    <i class="bi bi-bank me-2"></i>Universities
+                </a>
+            </div>
+        </div>
+    `;
+    
+    categoriesCard.addEventListener('click', (e) => e.stopPropagation());
+    modalOverlay.addEventListener('click', () => modalOverlay.remove());
+    
+    modalOverlay.appendChild(categoriesCard);
+    document.body.appendChild(modalOverlay);
+    
+    setTimeout(() => {
+        if (modalOverlay && modalOverlay.parentNode) {
+            modalOverlay.remove();
+        }
+    }, 10000);
+}
