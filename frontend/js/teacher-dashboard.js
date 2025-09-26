@@ -3,7 +3,18 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAnimations();
     initializeDashboard();
     setupNavigation();
+    setTodayDate();
 });
+
+// Set today's date in attendance date input
+function setTodayDate() {
+    const today = new Date();
+    const dateString = today.toISOString().split('T')[0];
+    const attendanceDateInput = document.getElementById('attendanceDate');
+    if (attendanceDateInput) {
+        attendanceDateInput.value = dateString;
+    }
+}
 
 function initializeDashboard() {
     // Initialize dashboard components
@@ -39,21 +50,249 @@ function setupNavigation() {
     });
 }
 
+// Student data for different classes
+const studentData = {
+    'CS-A': [
+        { id: 'CS-A-01', name: 'ARJUN SHARMA', contact: '+91-9876543220' },
+        { id: 'CS-A-02', name: 'KAVYA PATEL', contact: '+91-9876543221' },
+        { id: 'CS-A-03', name: 'ROHIT GUPTA', contact: '+91-9876543222' },
+        { id: 'CS-A-04', name: 'SNEHA SINGH', contact: '+91-9876543223' },
+        { id: 'CS-A-05', name: 'VIKRAM YADAV', contact: '+91-9876543224' }
+    ],
+    'CS-B': [
+        { id: 'CS-B-01', name: 'NIKHIL', contact: '+91-9876543210' },
+        { id: 'CS-B-02', name: 'PRASHANT', contact: '+91-9876543211' },
+        { id: 'CS-B-03', name: 'MD. SAHIL', contact: '+91-9876543212' },
+        { id: 'CS-B-04', name: 'MUKESH', contact: '+91-9876543213' },
+        { id: 'CS-B-05', name: 'MUSKAN', contact: '+91-9876543214' }
+    ],
+    'CS-C': [
+        { id: 'CS-C-01', name: 'ANANYA VERMA', contact: '+91-9876543230' },
+        { id: 'CS-C-02', name: 'KARAN MEHTA', contact: '+91-9876543231' },
+        { id: 'CS-C-03', name: 'POOJA AGARWAL', contact: '+91-9876543232' },
+        { id: 'CS-C-04', name: 'RAHUL JAIN', contact: '+91-9876543233' },
+        { id: 'CS-C-05', name: 'DIVYA SHARMA', contact: '+91-9876543234' }
+    ]
+};
+
+// Marks data for students with different exam types
+const marksData = {
+    'CS-A': {
+        'Midterm': [
+            { id: 'CS-A-01', name: 'ARJUN SHARMA', marks: 92, grade: 'A+' },
+            { id: 'CS-A-02', name: 'KAVYA PATEL', marks: 88, grade: 'A' },
+            { id: 'CS-A-03', name: 'ROHIT GUPTA', marks: 85, grade: 'A' },
+            { id: 'CS-A-04', name: 'SNEHA SINGH', marks: 90, grade: 'A+' },
+            { id: 'CS-A-05', name: 'VIKRAM YADAV', marks: 82, grade: 'B+' }
+        ],
+        'Final': [
+            { id: 'CS-A-01', name: 'ARJUN SHARMA', marks: 'Pending', grade: 'Pending' },
+            { id: 'CS-A-02', name: 'KAVYA PATEL', marks: 'Pending', grade: 'Pending' },
+            { id: 'CS-A-03', name: 'ROHIT GUPTA', marks: 'Pending', grade: 'Pending' },
+            { id: 'CS-A-04', name: 'SNEHA SINGH', marks: 'Pending', grade: 'Pending' },
+            { id: 'CS-A-05', name: 'VIKRAM YADAV', marks: 'Pending', grade: 'Pending' }
+        ],
+        'Quiz': [
+            { id: 'CS-A-01', name: 'ARJUN SHARMA', marks: 18, grade: 'A+', total: 20 },
+            { id: 'CS-A-02', name: 'KAVYA PATEL', marks: 17, grade: 'A', total: 20 },
+            { id: 'CS-A-03', name: 'ROHIT GUPTA', marks: 16, grade: 'A', total: 20 },
+            { id: 'CS-A-04', name: 'SNEHA SINGH', marks: 19, grade: 'A+', total: 20 },
+            { id: 'CS-A-05', name: 'VIKRAM YADAV', marks: 15, grade: 'B+', total: 20 }
+        ],
+        'Assignment': [
+            { id: 'CS-A-01', name: 'ARJUN SHARMA', marks: 48, grade: 'A+', total: 50 },
+            { id: 'CS-A-02', name: 'KAVYA PATEL', marks: 45, grade: 'A', total: 50 },
+            { id: 'CS-A-03', name: 'ROHIT GUPTA', marks: 43, grade: 'A', total: 50 },
+            { id: 'CS-A-04', name: 'SNEHA SINGH', marks: 47, grade: 'A+', total: 50 },
+            { id: 'CS-A-05', name: 'VIKRAM YADAV', marks: 41, grade: 'B+', total: 50 }
+        ]
+    },
+    'CS-B': {
+        'Midterm': [
+            { id: 'CS-B-01', name: 'NIKHIL', marks: 85, grade: 'A' },
+            { id: 'CS-B-02', name: 'PRASHANT', marks: 78, grade: 'B+' },
+            { id: 'CS-B-03', name: 'MD. SAHIL', marks: 72, grade: 'B' },
+            { id: 'CS-B-04', name: 'MUKESH', marks: 80, grade: 'B+' },
+            { id: 'CS-B-05', name: 'MUSKAN', marks: 88, grade: 'A' }
+        ],
+        'Final': [
+            { id: 'CS-B-01', name: 'NIKHIL', marks: 'Pending', grade: 'Pending' },
+            { id: 'CS-B-02', name: 'PRASHANT', marks: 'Pending', grade: 'Pending' },
+            { id: 'CS-B-03', name: 'MD. SAHIL', marks: 'Pending', grade: 'Pending' },
+            { id: 'CS-B-04', name: 'MUKESH', marks: 'Pending', grade: 'Pending' },
+            { id: 'CS-B-05', name: 'MUSKAN', marks: 'Pending', grade: 'Pending' }
+        ],
+        'Quiz': [
+            { id: 'CS-B-01', name: 'NIKHIL', marks: 17, grade: 'A', total: 20 },
+            { id: 'CS-B-02', name: 'PRASHANT', marks: 15, grade: 'B+', total: 20 },
+            { id: 'CS-B-03', name: 'MD. SAHIL', marks: 14, grade: 'B', total: 20 },
+            { id: 'CS-B-04', name: 'MUKESH', marks: 16, grade: 'A', total: 20 },
+            { id: 'CS-B-05', name: 'MUSKAN', marks: 18, grade: 'A+', total: 20 }
+        ],
+        'Assignment': [
+            { id: 'CS-B-01', name: 'NIKHIL', marks: 42, grade: 'A', total: 50 },
+            { id: 'CS-B-02', name: 'PRASHANT', marks: 39, grade: 'B+', total: 50 },
+            { id: 'CS-B-03', name: 'MD. SAHIL', marks: 36, grade: 'B', total: 50 },
+            { id: 'CS-B-04', name: 'MUKESH', marks: 40, grade: 'B+', total: 50 },
+            { id: 'CS-B-05', name: 'MUSKAN', marks: 44, grade: 'A', total: 50 }
+        ]
+    },
+    'CS-C': {
+        'Midterm': [
+            { id: 'CS-C-01', name: 'ANANYA VERMA', marks: 94, grade: 'A+' },
+            { id: 'CS-C-02', name: 'KARAN MEHTA', marks: 87, grade: 'A' },
+            { id: 'CS-C-03', name: 'POOJA AGARWAL', marks: 91, grade: 'A+' },
+            { id: 'CS-C-04', name: 'RAHUL JAIN', marks: 83, grade: 'B+' },
+            { id: 'CS-C-05', name: 'DIVYA SHARMA', marks: 89, grade: 'A' }
+        ],
+        'Final': [
+            { id: 'CS-C-01', name: 'ANANYA VERMA', marks: 'Pending', grade: 'Pending' },
+            { id: 'CS-C-02', name: 'KARAN MEHTA', marks: 'Pending', grade: 'Pending' },
+            { id: 'CS-C-03', name: 'POOJA AGARWAL', marks: 'Pending', grade: 'Pending' },
+            { id: 'CS-C-04', name: 'RAHUL JAIN', marks: 'Pending', grade: 'Pending' },
+            { id: 'CS-C-05', name: 'DIVYA SHARMA', marks: 'Pending', grade: 'Pending' }
+        ],
+        'Quiz': [
+            { id: 'CS-C-01', name: 'ANANYA VERMA', marks: 19, grade: 'A+', total: 20 },
+            { id: 'CS-C-02', name: 'KARAN MEHTA', marks: 17, grade: 'A', total: 20 },
+            { id: 'CS-C-03', name: 'POOJA AGARWAL', marks: 18, grade: 'A+', total: 20 },
+            { id: 'CS-C-04', name: 'RAHUL JAIN', marks: 16, grade: 'A', total: 20 },
+            { id: 'CS-C-05', name: 'DIVYA SHARMA', marks: 18, grade: 'A+', total: 20 }
+        ],
+        'Assignment': [
+            { id: 'CS-C-01', name: 'ANANYA VERMA', marks: 47, grade: 'A+', total: 50 },
+            { id: 'CS-C-02', name: 'KARAN MEHTA', marks: 43, grade: 'A', total: 50 },
+            { id: 'CS-C-03', name: 'POOJA AGARWAL', marks: 46, grade: 'A+', total: 50 },
+            { id: 'CS-C-04', name: 'RAHUL JAIN', marks: 41, grade: 'B+', total: 50 },
+            { id: 'CS-C-05', name: 'DIVYA SHARMA', marks: 44, grade: 'A', total: 50 }
+        ]
+    }
+};
+
+// Load marks data based on class and exam selection
+function loadMarksData() {
+    const classSelect = document.getElementById('marksClassSelect').value;
+    const examType = document.getElementById('examTypeSelect').value;
+    
+    if (!classSelect || !examType) {
+        showMessage('Please select both class and exam type', 'warning');
+        return;
+    }
+    
+    showMessage(`Loading ${examType} marks for ${classSelect}...`, 'info');
+    
+    setTimeout(() => {
+        const students = marksData[classSelect]?.[examType];
+        if (students) {
+            updateMarksTable(students, examType);
+            showMessage(`✅ ${examType} marks loaded for ${classSelect}`, 'success');
+        } else {
+            showMessage('No data found for selected combination', 'warning');
+        }
+    }, 1000);
+}
+
+// Update marks table with selected data
+function updateMarksTable(students, examType) {
+    const tableBody = document.getElementById('marksTable');
+    tableBody.innerHTML = '';
+    
+    students.forEach(student => {
+        const row = document.createElement('tr');
+        const totalMarks = student.total || 100;
+        
+        row.innerHTML = `
+            <td>${student.id}</td>
+            <td>${student.name}</td>
+            <td><input type="number" class="form-control form-control-sm" value="${student.marks}" max="${totalMarks}" aria-label="Marks for ${student.name}"></td>
+            <td>${totalMarks}</td>
+            <td><span class="badge ${getBadgeClass(student.grade)}">${student.grade}</span></td>
+            <td>
+                <button type="button" class="btn btn-sm btn-primary" title="Save marks for ${student.name}">
+                    <i class="bi bi-check"></i>
+                </button>
+            </td>
+        `;
+        
+        tableBody.appendChild(row);
+    });
+}
+
+// Get badge class for grade
+function getBadgeClass(grade) {
+    if (grade === 'Pending') return 'bg-warning';
+    if (grade.includes('A+')) return 'bg-success';
+    if (grade.includes('A')) return 'bg-success';
+    if (grade.includes('B+')) return 'bg-primary';
+    if (grade.includes('B')) return 'bg-info';
+    if (grade.includes('C')) return 'bg-warning';
+    return 'bg-danger';
+}
+
+// Export Reports Function
+function exportReports() {
+    showMessage('📊 Exporting reports...', 'info');
+    setTimeout(() => {
+        showMessage('✅ Reports exported successfully!', 'success');
+    }, 2000);
+}
+
+// Export Schedule Function
+function exportSchedule() {
+    showMessage('📅 Exporting schedule...', 'info');
+    setTimeout(() => {
+        showMessage('✅ Schedule exported successfully!', 'success');
+    }, 1500);
+}
+
+// Update loadStudents function to use new data
 function loadStudents() {
     const classSelect = document.getElementById('classSelect').value;
     const attendanceDate = document.getElementById('attendanceDate').value;
     
-    if (!classSelect) {
-        alert('Please select a class first');
+    if (!classSelect || classSelect === 'Select Class') {
+        showMessage('Please select a class first', 'warning');
         return;
     }
     
-    // Simulate loading students
-    showMessage('Loading students for ' + classSelect + '...', 'info');
+    showMessage(`Loading students for ${classSelect}...`, 'info');
     
     setTimeout(() => {
-        showMessage('Students loaded successfully!', 'success');
+        const students = studentData[classSelect];
+        if (students) {
+            updateAttendanceTable(students, classSelect);
+            showMessage(`✅ ${students.length} students loaded for ${classSelect}`, 'success');
+        }
     }, 1000);
+}
+
+// Update attendance table with selected class data
+function updateAttendanceTable(students, className) {
+    const tableBody = document.getElementById('attendanceTable');
+    tableBody.innerHTML = '';
+    
+    students.forEach((student, index) => {
+        const row = document.createElement('tr');
+        const isPresent = Math.random() > 0.2; // 80% attendance rate
+        
+        row.innerHTML = `
+            <td>${student.id}</td>
+            <td>${student.name}</td>
+            <td>${student.contact}</td>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="att_${student.id.replace('-', '')}" value="present" ${isPresent ? 'checked' : ''} aria-label="Mark ${student.name} as present">
+                    <label class="form-check-label text-success">Present</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="att_${student.id.replace('-', '')}" value="absent" ${!isPresent ? 'checked' : ''} aria-label="Mark ${student.name} as absent">
+                    <label class="form-check-label text-danger">Absent</label>
+                </div>
+            </td>
+        `;
+        
+        tableBody.appendChild(row);
+    });
 }
 
 function saveAttendance() {
@@ -93,13 +332,6 @@ function updateStats() {
     // Update with animation
     animateCounter('totalStudents', stats.students);
     animateCounter('attendanceRate', stats.attendance + '%');
-}
-
-function exportSchedule() {
-    showMessage('📅 Exporting weekly schedule...', 'info');
-    setTimeout(() => {
-        showMessage('✅ Schedule exported successfully!', 'success');
-    }, 1500);
 }
 
 function loadWeeklySchedule(week) {

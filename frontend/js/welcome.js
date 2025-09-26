@@ -223,8 +223,29 @@ function showSignup() {
     }, 500);
 }
 
-function showVideoMessage() {
-    showGlobalMessage('🎥 Demo video coming soon! In the meantime, explore the platform using the role cards above.', 'info');
+function redirectToVideo() {
+    showGlobalMessage('🎥 Opening demo video...', 'info');
+    
+    const video = document.createElement('video');
+    video.src = 'REPODENT.mp4';
+    video.controls = true;
+    video.autoplay = true;
+    video.style.width = '100%';
+    
+    const modal = document.createElement('div');
+    modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px';
+    modal.onclick = () => modal.remove();
+    
+    const container = document.createElement('div');
+    container.style.cssText = 'max-width:90%;background:white;padding:20px;border-radius:10px';
+    container.appendChild(video);
+    modal.appendChild(container);
+    document.body.appendChild(modal);
+    
+    video.onerror = () => {
+        modal.remove();
+        showGlobalMessage('📁 Video file not found. Please place REPODENT.mp4 in frontend folder', 'warning');
+    };
 }
 
 function showGlobalMessage(message, type) {

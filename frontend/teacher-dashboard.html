@@ -77,7 +77,7 @@
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2"><i class="bi bi-speedometer2 me-2"></i>Teacher Dashboard</h1>
                         <div class="btn-toolbar mb-2 mb-md-0">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="exportReports()">
                                 <i class="bi bi-download me-1"></i>Export Reports
                             </button>
                         </div>
@@ -223,7 +223,7 @@
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <input type="date" class="form-control" id="attendanceDate" value="2024-01-15" aria-label="Select attendance date">
+                            <input type="date" class="form-control" id="attendanceDate" aria-label="Select attendance date">
                         </div>
                         <div class="col-md-4">
                             <button type="button" class="btn btn-primary" onclick="loadStudents()">
@@ -579,21 +579,26 @@
 
                     <div class="row mb-3">
                         <div class="col-md-4">
-                            <select class="form-select" aria-label="Select class for marks">
-                                <option>Select Class</option>
-                                <option>CS-A</option>
-                                <option>CS-B</option>
-                                <option>CS-C</option>
+                            <select class="form-select" id="marksClassSelect" onchange="loadMarksData()" aria-label="Select class for marks">
+                                <option value="">Select Class</option>
+                                <option value="CS-A">CS-A</option>
+                                <option value="CS-B">CS-B</option>
+                                <option value="CS-C">CS-C</option>
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <select class="form-select" aria-label="Select exam type">
-                                <option>Select Exam Type</option>
-                                <option>Midterm</option>
-                                <option>Final</option>
-                                <option>Quiz</option>
-                                <option>Assignment</option>
+                            <select class="form-select" id="examTypeSelect" onchange="loadMarksData()" aria-label="Select exam type">
+                                <option value="">Select Exam Type</option>
+                                <option value="Midterm">Midterm</option>
+                                <option value="Final">Final</option>
+                                <option value="Quiz">Quiz</option>
+                                <option value="Assignment">Assignment</option>
                             </select>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-primary" onclick="loadMarksData()">
+                                <i class="bi bi-search me-1"></i>Load Marks
+                            </button>
                         </div>
                     </div>
 
@@ -611,65 +616,10 @@
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="marksTable">
                                         <tr>
-                                            <td>CS-B-01</td>
-                                            <td>Md Sahil</td>
-                                            <td><input type="number" class="form-control form-control-sm" value="85" max="100" aria-label="Marks for Md Sahil"></td>
-                                            <td>100</td>
-                                            <td><span class="badge bg-success">A</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-sm btn-primary" title="Save marks for Md Sahil">
-                                                    <i class="bi bi-check"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>CS-B-02</td>
-                                            <td>PRASHANT</td>
-                                            <td><input type="number" class="form-control form-control-sm" value="78" max="100" aria-label="Marks for PRASHANT"></td>
-                                            <td>100</td>
-                                            <td><span class="badge bg-primary">B+</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-sm btn-primary" title="Save marks for PRASHANT">
-                                                    <i class="bi bi-check"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>CS-B-03</td>
-                                            <td>Nikhil</td>
-                                            <td><input type="number" class="form-control form-control-sm" value="72" max="100" aria-label="Marks for Nikhil"></td>
-                                            <td>100</td>
-                                            <td><span class="badge bg-info">B</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-sm btn-primary" title="Save marks for Nikhil">
-                                                    <i class="bi bi-check"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>CS-B-04</td>
-                                            <td>MUKESH</td>
-                                            <td><input type="number" class="form-control form-control-sm" value="80" max="100" aria-label="Marks for MUKESH"></td>
-                                            <td>100</td>
-                                            <td><span class="badge bg-primary">B+</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-sm btn-primary" title="Save marks for MUKESH">
-                                                    <i class="bi bi-check"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>CS-B-05</td>
-                                            <td>MUSKAN</td>
-                                            <td><input type="number" class="form-control form-control-sm" value="88" max="100" aria-label="Marks for MUSKAN"></td>
-                                            <td>100</td>
-                                            <td><span class="badge bg-success">A</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-sm btn-primary" title="Save marks for MUSKAN">
-                                                    <i class="bi bi-check"></i>
-                                                </button>
+                                            <td colspan="6" class="text-center text-muted py-4">
+                                                <i class="bi bi-search me-2"></i>Please select a class and exam type to view marks
                                             </td>
                                         </tr>
                                     </tbody>
