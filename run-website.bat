@@ -1,6 +1,6 @@
 @echo off
 echo ========================================
-echo    EduManage - Student Management System
+echo    RepoDent - Student Management System
 echo ========================================
 echo.
 echo Starting the modern SMS website...

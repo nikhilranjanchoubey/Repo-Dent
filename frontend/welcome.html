@@ -30,6 +30,12 @@
                         <a class="nav-link" href="welcome.html"><i class="bi bi-house-fill me-1"></i>Home</a>
                     </li>
                     
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showFeatures()">
+                            <i class="bi bi-star-fill me-1"></i>Features
+                        </a>
+                    </li>
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             <i class="bi bi-grid-3x3-gap-fill me-1"></i>Category
@@ -39,6 +45,12 @@
                             <li><a class="dropdown-item" href="category.html"><i class="bi bi-mortarboard me-2"></i>College</a></li>
                             <li><a class="dropdown-item" href="category.html"><i class="bi bi-bank me-2"></i>Universities</a></li>
                         </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSupport()">
+                            <i class="bi bi-headset me-1"></i>Support
+                        </a>
                     </li>
                     
                     <li class="nav-item dropdown">
@@ -52,15 +64,10 @@
                         </ul>
                     </li>
                     
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            <i class="bi bi-person-plus me-1"></i>Register
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white px-3 rounded" href="signup.html">
+                            <i class="bi bi-rocket-takeoff me-1"></i>Get Started
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="signup.html"><i class="bi bi-person-badge me-2"></i>Teacher</a></li>
-                            <li><a class="dropdown-item" href="signup.html"><i class="bi bi-person me-2"></i>Student</a></li>
-                            <li><a class="dropdown-item" href="signup.html"><i class="bi bi-people me-2"></i>Parent</a></li>
-                        </ul>
                     </li>
                 </ul>
             </div>
@@ -344,18 +351,94 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3">Frequently Asked Questions</h2>
+                <p class="lead text-muted">Everything you need to know about RepoDent</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    What is RepoDent?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    RepoDent is a comprehensive student management system designed for educational institutions. It provides separate dashboards for teachers, students, and parents with features like attendance tracking, grade management, and communication tools.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    How do I access the demo?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You can access the demo by using the provided credentials: Teacher (teacher@sms.edu / teacher123), Student (student@sms.edu / student123), or Parent (parent@sms.edu / parent123). Click on any role card or use the login dropdown in the navigation.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    What features are included?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    RepoDent includes smart attendance tracking, grade management, timetable system, analytics dashboard, communication tools, report generation, and multi-role access for teachers, students, and parents.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Is this an open source project?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, RepoDent is an open source educational project built with modern web technologies. The source code is available on GitHub for learning and educational purposes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    What data is included in the demo?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    The demo includes real sample data from Arya College of Engineering & IT, featuring students from III SEM CS-A, CS-B, and CS-C sections, faculty information, subject details, and realistic academic records for demonstration purposes.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Get Started Section -->
     <section class="py-5 gradient-section">
         <div class="container">
             <div class="text-center text-white">
-                <h2 class="fw-bold mb-3">Ready to Explore?</h2>
-                <p class="mb-4">Start your journey with our comprehensive demo platform</p>
+                <h2 class="fw-bold mb-3">Ready to Transform Education?</h2>
+                <p class="mb-4">Experience the future of RepoDent</p>
                 <div class="d-flex justify-content-center gap-3 flex-wrap">
                     <button class="btn btn-light btn-lg" onclick="redirectToVideo()">
-                        <i class="bi bi-play-circle me-2"></i>Tour
+                        <i class="bi bi-play-circle me-2"></i>Watch Demo
                     </button>
                     <a href="signup.html" class="btn btn-outline-light btn-lg">
-                        <i class="bi bi-person-plus me-2"></i>Register
+                        <i class="bi bi-rocket-takeoff me-2"></i>Get Started Free
                     </a>
                 </div>
             </div>

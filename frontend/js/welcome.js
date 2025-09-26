@@ -442,6 +442,120 @@ function redirectToGitHub() {
     window.open('https://github.com/nikhilranjanchoubey/Repo-Dent', '_blank');
 }
 
+function showFeatures() {
+    const existingModal = document.getElementById('featuresModal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    const modalOverlay = document.createElement('div');
+    modalOverlay.id = 'featuresModal';
+    modalOverlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px';
+    
+    const featuresCard = document.createElement('div');
+    featuresCard.className = 'card bg-white border-primary';
+    featuresCard.style.maxWidth = '500px';
+    featuresCard.innerHTML = `
+        <div class="card-header bg-primary text-white text-center">
+            <h6 class="mb-0"><i class="bi bi-star-fill me-2"></i>RepoDent Features</h6>
+        </div>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-6">
+                    <div class="text-center p-2">
+                        <i class="bi bi-calendar-check text-primary" style="font-size: 2rem;"></i>
+                        <h6 class="mt-2">Smart Attendance</h6>
+                        <small class="text-muted">Real-time tracking</small>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="text-center p-2">
+                        <i class="bi bi-graph-up-arrow text-success" style="font-size: 2rem;"></i>
+                        <h6 class="mt-2">Grade Analytics</h6>
+                        <small class="text-muted">Performance insights</small>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="text-center p-2">
+                        <i class="bi bi-chat-dots text-warning" style="font-size: 2rem;"></i>
+                        <h6 class="mt-2">Communication</h6>
+                        <small class="text-muted">Seamless messaging</small>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="text-center p-2">
+                        <i class="bi bi-shield-check text-info" style="font-size: 2rem;"></i>
+                        <h6 class="mt-2">Secure Platform</h6>
+                        <small class="text-muted">Enterprise security</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    featuresCard.addEventListener('click', (e) => e.stopPropagation());
+    modalOverlay.addEventListener('click', () => modalOverlay.remove());
+    
+    modalOverlay.appendChild(featuresCard);
+    document.body.appendChild(modalOverlay);
+    
+    setTimeout(() => {
+        if (modalOverlay && modalOverlay.parentNode) {
+            modalOverlay.remove();
+        }
+    }, 10000);
+}
+
+function showSupport() {
+    const existingModal = document.getElementById('supportModal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    const modalOverlay = document.createElement('div');
+    modalOverlay.id = 'supportModal';
+    modalOverlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px';
+    
+    const supportCard = document.createElement('div');
+    supportCard.className = 'card bg-white border-primary';
+    supportCard.style.maxWidth = '400px';
+    supportCard.innerHTML = `
+        <div class="card-header bg-primary text-white text-center">
+            <h6 class="mb-0"><i class="bi bi-headset me-2"></i>Contact Support</h6>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <h6><i class="bi bi-envelope me-2 text-primary"></i>Email</h6>
+                <p class="mb-0">support@repodent.edu</p>
+            </div>
+            <div class="mb-3">
+                <h6><i class="bi bi-telephone me-2 text-success"></i>Phone</h6>
+                <p class="mb-0">+91-9876543210</p>
+            </div>
+            <div class="mb-3">
+                <h6><i class="bi bi-geo-alt me-2 text-warning"></i>Address</h6>
+                <p class="mb-0">Bengaluru, India</p>
+            </div>
+            <div class="mb-0">
+                <h6><i class="bi bi-clock me-2 text-info"></i>Support Hours</h6>
+                <p class="mb-0">Mon-Sun: 8:00 AM - 10:00 PM IST</p>
+            </div>
+        </div>
+    `;
+    
+    supportCard.addEventListener('click', (e) => e.stopPropagation());
+    modalOverlay.addEventListener('click', () => modalOverlay.remove());
+    
+    modalOverlay.appendChild(supportCard);
+    document.body.appendChild(modalOverlay);
+    
+    setTimeout(() => {
+        if (modalOverlay && modalOverlay.parentNode) {
+            modalOverlay.remove();
+        }
+    }, 10000);
+}
+
 function showCategories() {
     const existingModal = document.getElementById('categoriesModal');
     if (existingModal) {

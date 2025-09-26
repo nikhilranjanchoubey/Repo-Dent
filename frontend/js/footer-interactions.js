@@ -25,7 +25,7 @@ function showFeatureInfo(feature) {
 function showSupportInfo(type) {
     const supportMessages = {
         help: '❓ Help Center: Comprehensive guides and FAQs for all user roles.',
-        contact: '📞 Contact: Email us at support@repodent.edu or call +91-XXXX-XXXX',
+        contact: '📞 Contact Support<br>📧 Email: support@repodent.edu<br>📱 Phone: +91-9876543210<br>📍 Address: Bengaluru, India<br>🕒 Support Hours: Mon-Sun: 8:00 AM - 10:00 PM IST',
         docs: '📚 Documentation: Complete API docs and integration guides available.',
         demo: '🎮 Demo Guide: Interactive tutorials for teachers, students, and parents.',
         feedback: '💬 Feedback: Your suggestions help us improve. Share your thoughts!'
